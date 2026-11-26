@@ -1,0 +1,2 @@
+## Evaluation actions
+- Evaluation row changes use permission-checked RPCs; used evaluations are archive-only, linked references are preserved, and archived rows remain readable in sale history but are excluded from new selections, so edits cannot erase sale history.

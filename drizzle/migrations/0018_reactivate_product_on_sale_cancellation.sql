@@ -1,0 +1,1 @@
+DO $$ DECLARE d text; BEGIN SELECT pg_get_functiondef('public.cancel_sale(uuid,text)'::regprocedure) INTO d; IF position('SET quantity = quantity +' IN d)=0 THEN RAISE EXCEPTION 'Unexpected cancellation definition'; END IF; d:=replace(d,'SET quantity = quantity +','SET archived = false, quantity = quantity +'); EXECUTE d; END $$;
